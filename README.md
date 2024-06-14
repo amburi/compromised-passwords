@@ -58,7 +58,7 @@ In today's digital age, security is paramount. Users often choose weak or compro
     python app.py
     ```
 
-The server will start on port 5000 by default.
+The server will start on port 8080 by default.
 
 ### Using Docker
 
@@ -75,10 +75,12 @@ The server will start on port 5000 by default.
 
 3. **Run the Docker container:**
     ```sh
-    docker run -p 5000:5000 compromised-password-checker
+    docker run -p 8080:8080 compromised-password-checker
     ```
 
-The server will be available on port 5000.
+The server will be available on port 8080.
+
+Docker image: https://hub.docker.com/repository/docker/amburi/compromised-passwords
 
 ## Usage
 
@@ -93,7 +95,7 @@ The server will be available on port 5000.
 ### Example Request
 
 ```sh
-curl -X POST http://localhost:5000/compromised -H "Content-Type: application/json" -d '{"password": "password123"}'
+curl -X POST http://localhost:8080/compromised -H "Content-Type: application/json" -d '{"password": "password123"}'
 ```
 
 ### Responses
@@ -138,17 +140,9 @@ To add more compromised passwords, update the `COMPROMISED_PASSWORDS` set in `ap
 COMPROMISED_PASSWORDS = {'password123', '123456', 'qwerty', 'letmein'}
 ```
 
-### Running Tests
-
-You can create tests for this application using a testing framework like `unittest` or `pytest`.
-
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for any changes.
 
 ## Contact
 
